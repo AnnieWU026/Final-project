@@ -1,163 +1,55 @@
-Project Introduction
+2D space shooting adventure
+Game Overview
 
-This project is a 2D design game developed in VS Code using p5.js, combining basic shooting gameplay, level systems, and a simple narrative structure. Players will control a spaceship, defeat monsters in different levels, trigger hidden levels and complete the ultimate victory.
+This is a 2D space shooting game. Players pilot spaceships through multiple levels, battle enemies, dodge attacks, and ultimately face a challenging boss. This game combines story elements with action gameplay, including a hidden level triggered by a hidden door. Players can also obtain an AI companion in the later stage to assist in battles.
 
-This game is designed with the core concept of being user-friendly for beginners. Its code structure is clear and the logic is intuitive, making it suitable as a 2D game project assignment in programming courses.
+Main features
 
-Gameplay Overview
-Basic operations
+Introduce the narrative through multiple story pages.
 
-W/A/S/D: Controls the up, down, left and right movement of the spaceship
+It features a gradually increasing difficulty with standard enemies and boss battles.
 
-Space bar: Fire bullets (one bullet per click)
+Players can shoot bullets, reload bullets, track scores, lives and kills.
 
-Left mouse button: Click to switch story pages/Enter levels
+AI companions can move and shoot independently.
 
-Game Structures and Processes Game States
+Enter the hidden level through the secret door.
 
-The game controls the flow through the gamestate variable, and the overall sequence is as follows:
+Battle mobile bosses and bosses with multi-bullet attacks.
 
-Start the Story Pages
+The game end and restart functions for normal levels and boss battles.
 
-After the game starts, players will see three pages of story background pictures in sequence
+Inspiration
 
-Each time you click the mouse, you go to the next page
+This game is inspired by classic 2D space shooting games and story-driven games. The arcade-style shooting mechanism reminds people of games like "Space Invaders". Story-based games to enhance players' immersion. The AI companions in the game are cooperative gameplay.
 
+Our goal is to create a visually appealing game suitable for beginners, while exploring the combination of story and action gameplay in a single 2D environment.
 
+How to play
 
+Exercise
 
-Level 1 / play1
+W→ Move up
+A→ Move to the left
+S→ Move downward
+D→ Move to the right
 
-Player health points: 5
+Attack
 
-Basic ammunition quantity: 8
+SPACE→ Shoot bullets
 
-Objective: Defeat 30 monsters
+When the ammunition reaches 0, it will be automatically reloaded
 
-Mid Story Page
+Mouse control
 
-It is used to connect the plot and the transition between levels
+Click "Start Game", the progress story page, or restart after the game ends.
 
+Game hint
 
+Destroy the monsters to increase your score and pass the levels.
 
+Be cautious of the boss's three consecutive attacks and be careful to dodge.
 
-Level 2 / play2
+Reach the secret door and enter the hidden level.
 
-Player health points: 7
-
-Basic ammunition quantity: 8
-
-Objective: Defeat 50 monsters
-
-It includes a hidden level entrance
-
-Hidden Boss Level (Boss Fight)
-
-Triggered when the player enters the hidden area
-
-The Boss needs to be hit 50 times to defeat
-
-After success, AI partners will be unlocked
-
-Settlement and Victory Page Win
-
-A victory screen will be displayed after the player completes all the goals
-
-Core System Description
-1.Ammunition and Loading System (Ammo & Reload)
-
-The initial ammunition quantity for players is 8 rounds
-
-Each press of the space bar consumes 1 bullet
-
-When the ammunition quantity is 0:
-
-The player enters the loading state
-
-The filling time is 5 seconds
-
-No shooting is allowed during loading
-
-Monsters will continue to generate
-
-After loading is completed, the ammunition will automatically be restored to 8 rounds
-
-This system uses millis() to implement time detection, avoiding the use of complex timers and is suitable for beginners to understand.
-
-2.Monster System
-
-Monsters will be generated from the top of the screen and move down
-
-If the monster touches the player or reaches the bottom of the screen:
-
-The player's health points decrease
-
-Monster reset position
-
-In the second level, the monsters will increase their left and right movement, raising the difficulty
-
-3.Hidden levels and Boss system
-
-There is a hidden entrance at the lower right corner of the second level
-
-After reaching the designated area, players enter the Boss level
-
-The Boss needs to be hit by bullets 50 times
-
-After defeating the Boss:
-
-The player returns to the second level
-
-Unlock the AI spaceship companion
-
-4.AI Companion System
-
-The AI spaceship will appear in the second level
-
-AI will not stop players
-
-The AI can be in the same position as the player and shoot simultaneously
-
-The AI will move automatically and fire bullets regularly to assist players in completing levels
-
-5.UI interface information display
-
-In the level, the upper left corner of the screen will display in real time:
-
-Current Score
-
-Player Lives
-
-The number of monsters defeated (Kills)
-
-Ammunition quantity or loading status (Ammo/Reloading)
-
-Technical implementation description
-
-Use the p5.js framework
-
-Use setup() and draw() as the main loop structure
-
-Manage Bullets using an array
-
-Manage the game flow using a State Machine
-
-Use millis() to control the filling time
-
-The code as a whole follows
-
-The variable naming is clear
-
-The function has a single responsibility.
-
-The logical structure is linear and easy to read
-
-Project features and design concepts
-
-Combine narrative with Gameplay
-
-Reward players' exploration behaviors with hidden levels
-
-The difficulty gradually increases as the levels progress
-
-Implement the complete game flow while keeping the code simple
+AI companions assist in shooting and horizontal movement to cover additional space.
